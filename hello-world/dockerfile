@@ -1,0 +1,18 @@
+FROM python:3.10.8-alpine3.15 as base
+#RUN pip install flask
+
+RUN mkdir /wip/
+WORKDIR /wip/
+
+COPY ./src/requirements.txt /wip/requirements.txt
+RUN pip install -r /wip/requirements.txt
+
+COPY ./src/ /wip/
+ENV FLASK_APP=server.py
+ENV FLASK_DEBUG=1
+
+
+###########START NEW IMAGE: PRODUCTION ###################
+FROM base as prod
+
+CMD flask run -h 0.0.0 -p 5000

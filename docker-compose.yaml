@@ -1,0 +1,82 @@
+version: "3.4"
+services:
+  hw-app: #docker run -it -v ${PWD}:/src -w /wip -p 5001:5000 jassi/hello-world:1.0.0 /bin/sh
+    container_name: hello-world
+    image: jassi/hello-world:1.0.0
+    build: 
+      context: ./hello-world
+      target: prod
+    volumes:
+    - ./hello-world/src/:/wip
+    ports:
+      - 5001:5000
+    networks:
+      - elastic
+  hw-filebeat: 
+    container_name: filebeat
+    user: root
+    image: docker.elastic.co/beats/filebeat:7.17.6
+    volumes:
+    - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+    - /var/lib/docker:/var/lib/docker:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - elastic
+
+  # https://www.elastic.co/guide/en/elastic-stack-get-started/7.17/get-started-docker.html
+  hw-es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.6
+    container_name: es01
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02
+      - cluster.initial_master_nodes=es01,es02
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data01:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+  hw-es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.6
+    container_name: es02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01
+      - cluster.initial_master_nodes=es01,es02
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data02:/usr/share/elasticsearch/data
+    networks:
+      - elastic
+  hw-kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.6
+    container_name: kibana
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://es01:9200
+      ELASTICSEARCH_HOSTS: '["http://es01:9200","http://es02:9200"]'
+    networks:
+      - elastic
+volumes:
+  data01:
+    driver: local
+  data02:
+    driver: local
+networks:
+  elastic:
+    driver: bridge
