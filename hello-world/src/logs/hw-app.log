@@ -1,0 +1,121 @@
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.128.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 105-797-306
+192.168.128.1 - - [25/Oct/2022 22:25:04] "GET / HTTP/1.1" 200 -
+192.168.128.1 - - [25/Oct/2022 22:28:31] "[33mGET /hgj HTTP/1.1[0m" 404 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.144.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 392-299-003
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.160.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 138-065-491
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.176.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 875-434-183
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.192.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 170-554-751
+192.168.192.1 - - [25/Oct/2022 23:11:28] "[33mGET /hgj HTTP/1.1[0m" 404 -
+192.168.192.1 - - [25/Oct/2022 23:13:32] "[33mGET /hgj HTTP/1.1[0m" 404 -
+192.168.192.1 - - [25/Oct/2022 23:13:33] "[33mGET /hgj HTTP/1.1[0m" 404 -
+192.168.192.1 - - [25/Oct/2022 23:13:33] "[33mGET /hgj HTTP/1.1[0m" 404 -
+192.168.192.1 - - [25/Oct/2022 23:13:33] "[33mGET /hgj HTTP/1.1[0m" 404 -
+192.168.192.1 - - [25/Oct/2022 23:13:38] "GET / HTTP/1.1" 200 -
+192.168.192.1 - - [25/Oct/2022 23:13:41] "GET /admin HTTP/1.1" 200 -
+192.168.192.1 - - [25/Oct/2022 23:13:45] "[32mGET /user/admin HTTP/1.1[0m" 302 -
+192.168.192.1 - - [25/Oct/2022 23:13:45] "GET /admin HTTP/1.1" 200 -
+192.168.192.1 - - [25/Oct/2022 23:13:49] "[32mGET /user/test HTTP/1.1[0m" 302 -
+192.168.192.1 - - [25/Oct/2022 23:13:49] "GET /guest/test HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.208.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 214-864-789
+192.168.208.1 - - [25/Oct/2022 23:17:38] "GET /guest/test HTTP/1.1" 200 -
+192.168.208.1 - - [25/Oct/2022 23:17:39] "GET /guest/test HTTP/1.1" 200 -
+192.168.208.1 - - [25/Oct/2022 23:17:39] "GET /guest/test HTTP/1.1" 200 -
+192.168.208.1 - - [25/Oct/2022 23:17:40] "GET /guest/test HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.240.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 759-378-366
+192.168.240.1 - - [25/Oct/2022 23:21:56] "GET /guest/test HTTP/1.1" 200 -
+192.168.240.1 - - [25/Oct/2022 23:21:56] "GET /guest/test HTTP/1.1" 200 -
+192.168.240.1 - - [25/Oct/2022 23:21:57] "GET /guest/test HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 860-892-606
+172.18.0.1 - - [25/Oct/2022 23:24:57] "GET /guest/test HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 919-087-694
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 412-184-268
+172.20.0.1 - - [25/Oct/2022 23:31:31] "GET /guest/test HTTP/1.1" 200 -
+172.20.0.1 - - [25/Oct/2022 23:31:31] "GET /guest/test HTTP/1.1" 200 -
+172.20.0.1 - - [25/Oct/2022 23:31:33] "GET /admin HTTP/1.1" 200 -
+172.20.0.1 - - [25/Oct/2022 23:31:35] "GET / HTTP/1.1" 200 -
+172.20.0.1 - - [25/Oct/2022 23:32:39] "GET / HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 939-869-141
+172.21.0.1 - - [25/Oct/2022 23:34:40] "GET / HTTP/1.1" 200 -
+172.21.0.1 - - [25/Oct/2022 23:34:44] "[33mGET /bjhj HTTP/1.1[0m" 404 -
+172.21.0.1 - - [25/Oct/2022 23:47:43] "[33mGET /bjhj HTTP/1.1[0m" 404 -
+172.21.0.1 - - [25/Oct/2022 23:47:43] "[33mGET /bjhj HTTP/1.1[0m" 404 -
+172.21.0.1 - - [25/Oct/2022 23:47:46] "GET / HTTP/1.1" 200 -
+172.21.0.1 - - [25/Oct/2022 23:47:46] "GET / HTTP/1.1" 200 -
+172.21.0.1 - - [25/Oct/2022 23:49:49] "GET / HTTP/1.1" 200 -

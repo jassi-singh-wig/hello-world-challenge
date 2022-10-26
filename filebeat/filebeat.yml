@@ -1,21 +1,15 @@
 filebeat.inputs:
-- type: container
+- type: filestream
+  id: my-filestream-id
   paths: 
-    - '/var/lib/docker/containers/*/*.log'
+    - /var/hw-app.log
 
 processors:
-- add_docker_metadata:
-    host: "unix:///var/run/docker.sock"
+  - add_docker_metadata:
+      host: "unix:///host_docker/docker.sock"
 
-- decode_json_fields:
-    fields: ["message"]
-    target: "json"
-    overwrite_keys: true
+output.logstash:
+  hosts: ["logstash:5044"]
 
-output.elasticsearch:
-  hosts: ["http://es01:9200"]
-  indices:
-    - index: "filebeat-%{+yyyy.MM.dd}"
-
-logging.json: false
+logging.json: true
 logging.metrics.enabled: false

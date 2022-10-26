@@ -1,5 +1,6 @@
 version: "3.4"
 services:
+  
   hw-app: #docker run -it -v ${PWD}:/src -w /wip -p 5001:5000 jassi/hello-world:1.0.0 /bin/sh
     container_name: hello-world
     image: jassi/hello-world:1.0.0
@@ -12,16 +13,34 @@ services:
       - 5001:5000
     networks:
       - elastic
+  
   hw-filebeat: 
     container_name: filebeat
     user: root
     image: docker.elastic.co/beats/filebeat:7.17.6
     volumes:
     - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-    - /var/lib/docker:/var/lib/docker:ro
-    - /var/run/docker.sock:/var/run/docker.sock
+    - ./hello-world/src/logs/hw-app.log:/var/hw-app.log:ro
+    #command: 'filebeat setup --index-management -E output.logstash.enabled=false -E "ouput.elasticsearch.hosts=["http://es01:9200"]"'
     networks:
       - elastic
+    depends_on:
+      - hw-logstash
+
+  hw-logstash:
+    container_name: logstash
+    image: docker.elastic.co/logstash/logstash:7.17.6
+    volumes:
+    - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    - ./logstash/template.json:/usr/share/logstash/templates/logstash.template.json
+    #- ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+    #command: logstash -f /etc/logstash/conf.d/logstash.conf
+    ports:
+      - 5044:5044
+    networks:
+      - elastic
+    depends_on:
+      - hw-kibana
 
   # https://www.elastic.co/guide/en/elastic-stack-get-started/7.17/get-started-docker.html
   hw-es01:
@@ -44,6 +63,8 @@ services:
       - 9200:9200
     networks:
       - elastic
+    depends_on:
+      - hw-app
   hw-es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.6
     container_name: es02
@@ -62,6 +83,8 @@ services:
       - data02:/usr/share/elasticsearch/data
     networks:
       - elastic
+    depends_on:
+      - hw-app
   hw-kibana:
     image: docker.elastic.co/kibana/kibana:7.17.6
     container_name: kibana
@@ -72,6 +95,8 @@ services:
       ELASTICSEARCH_HOSTS: '["http://es01:9200","http://es02:9200"]'
     networks:
       - elastic
+    depends_on:
+      - hw-es01
 volumes:
   data01:
     driver: local
