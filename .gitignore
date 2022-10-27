@@ -1,2 +1,5 @@
-**/hello-world/src/logs/hw-app.log
-**/hello-world/src/__pycache__/*
+**/hello-world/src/logs/*
+**/hello-world/src/__pycache__/**
+**/terraform/.terraform/**
+**/terraform/.terraform.*
+**/terraform/.terraform.tfstate

@@ -15,7 +15,7 @@ services:
   #     - elastic
   #   environment:
   #     - hw-var=Env_Var_Jassi
-  
+      
   hw-filebeat: 
     container_name: filebeat
     user: root

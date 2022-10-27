@@ -1,4 +1,8 @@
-Hello World Challenge
+Hello World Challenge:
+
+Pre-requisite:
+    a. Docker should be running on the host
+    b. Terraform should be installed on the host
 
 main: 24/10/2022
 1. Sample Flask app
@@ -21,3 +25,12 @@ Pending:
 1. Installed app using terraform
 2. Envrionment variable added in app
 >>>>>>>>WIP 
+
+day4: 27/10/2022
+Pending:
+    a. Store hello world env. variable in github
+    b. Insert hello world env. variable using ansible
+
+1. App is able to display env. variable
+2. Make file updated for simple commands 
+3. App is built & installed using tf
