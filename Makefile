@@ -3,7 +3,7 @@ plan:
 	terraform -chdir=./terraform plan
 up:
 	terraform -chdir=./terraform init
-	terraform -chdir=./terraform deploy
+	terraform -chdir=./terraform apply
 	docker-compose up 
 down:
 	terraform -chdir=./terraform destroy
