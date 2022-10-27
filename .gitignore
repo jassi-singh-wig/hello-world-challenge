@@ -2,4 +2,5 @@
 **/hello-world/src/__pycache__/**
 **/terraform/.terraform/**
 **/terraform/.terraform.*
-**/terraform/.terraform.tfstate
+**/terraform/terraform.tfstate
+**/.DS_Store
