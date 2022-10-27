@@ -1,18 +1,20 @@
 version: "3.4"
 services:
   
-  hw-app: #docker run -it -v ${PWD}:/src -w /wip -p 5001:5000 jassi/hello-world:1.0.0 /bin/sh
-    container_name: hello-world
-    image: jassi/hello-world:1.0.0
-    build: 
-      context: ./hello-world
-      target: prod
-    volumes:
-    - ./hello-world/src/:/wip
-    ports:
-      - 5001:5000
-    networks:
-      - elastic
+  # hw-app: #docker run -it -v ${PWD}:/src -w /wip -p 5001:5000 jassi/hello-world:1.0.0 /bin/sh
+  #   container_name: hello-world
+  #   image: jassi/hello-world:1.0.0
+  #   build: 
+  #     context: ./hello-world
+  #     target: prod
+  #   volumes:
+  #   - ./hello-world/src/:/wip
+  #   ports:
+  #     - 5001:5000
+  #   networks:
+  #     - elastic
+  #   environment:
+  #     - hw-var=Env_Var_Jassi
   
   hw-filebeat: 
     container_name: filebeat
@@ -63,8 +65,7 @@ services:
       - 9200:9200
     networks:
       - elastic
-    depends_on:
-      - hw-app
+
   hw-es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.6
     container_name: es02
@@ -83,8 +84,7 @@ services:
       - data02:/usr/share/elasticsearch/data
     networks:
       - elastic
-    depends_on:
-      - hw-app
+
   hw-kibana:
     image: docker.elastic.co/kibana/kibana:7.17.6
     container_name: kibana
