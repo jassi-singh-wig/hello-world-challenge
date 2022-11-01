@@ -34,3 +34,7 @@ Pending:
 1. App is able to display env. variable
 2. Make file updated for simple commands 
 3. App is built & installed using tf
+
+day5-6: 28/10/2022 31/10/2022
+Pending:
+Ansible :(
