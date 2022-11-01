@@ -8,5 +8,8 @@ up:
 down:
 	docker-compose rm -s -v -f hw-filebeat hw-logstash hw-es01 hw-es02 hw-kibana hw-ansible
 	terraform -chdir=./terraform destroy -auto-approve
-update:
+update-kibana:
 	docker-compose up hw-kibana-update
+update-env:
+	ansible-playbook ./ansible/local.yml
+	terraform -chdir=./terraform apply -auto-approve
