@@ -20,8 +20,8 @@ Ansible:
 Steps to start the exercise:
 
 1. In the project folder execute: `make up` 
-2. Apps: Sample python app (flask app), accessible on [localhost:5002](localhost:5002)
-3. Kibana, accessible on [localhost:5601](localhost:5601)
+2. Apps: Sample python app (flask app), accessible on [localhost:5002](http://localhost:5002/)
+3. Kibana, accessible on [localhost:5601](http://localhost:5601/)
 4. To re-install/install index_patterns, search, dashboard execute: `make update`
 5. Search [link](http://localhost:5601/app/discover#/view/hello-world-search?_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-7d%2Cto%3Anow)))
 6. Dashboard [link](http://localhost:5601/app/dashboards#/view/hello-world-dashboard?_g=(filters%3A!()%2Cquery%3A(language%3Akuery%2Cquery%3A'')%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-7d%2Cto%3Anow))) 
@@ -30,11 +30,13 @@ Steps to start the exercise:
 ---
 
 day1: 24/10/2022
+https://github.com/jassi-singh-wig/hello-world-challenge/tree/day1
 1. Sample Flask app
 2. ES, Kibana, Filebeat installed
 3. Container logs sent from the app + ES + Kibana + filebeat to ES using Filebeat --> Need to exclude all except Flask app logs
 
 day2: 25/10/2022
+https://github.com/jassi-singh-wig/hello-world-challenge/tree/day2
 1. Sample Flask app, updated to log in a local file
 2. Flask app logs saved in file sent to ES using Filebeat (used filestream instead of container)
 3. Updated to send logs from filebeat to Logstash, to extract & append some fields
@@ -42,6 +44,7 @@ day2: 25/10/2022
 5. Created dashboard in kibana
 
 day3: 26/10/2022
+https://github.com/jassi-singh-wig/hello-world-challenge/tree/day3
 Pending:
     a. Store hello world env. variable in github
     b. Insert hello world env. variable using ansible
@@ -52,6 +55,7 @@ Pending:
 
 
 day4: 27/10/2022
+https://github.com/jassi-singh-wig/hello-world-challenge/tree/day4
 Pending:
     a. Store hello world env. variable in github
     b. Insert hello world env. variable using ansible
@@ -61,5 +65,6 @@ Pending:
 3. App is built & installed using tf
 
 day5-6: 28/10/2022 31/10/2022
+https://github.com/jassi-singh-wig/hello-world-challenge/tree/day5
 Pending:
 Ansible :(
