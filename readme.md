@@ -1,4 +1,4 @@
-Hello World Challenge:
+Hello World Challenge
 
 Pre-requisite:
     a. Docker, docker-compose should be running on the host
@@ -10,13 +10,22 @@ All apps are running in docker
 - hw-kibana-update python script to update/create index patterns, search, dashboard using saved_objects
 - `ansible installed in same docker network, but not working as expected`
 
+Ansible:
+1. docker exec -it ansible /bin/sh
+2. `Able to ping other host (Enter password=test, when prompted)` ansible default -i hosts -u test -m ping -k -b
+3. `Able to run command like hostname (Enter password = test)` ansible-playbook -i hosts test.yml -k -b -vvvv (It's able to ping back the container id of the hello-world app container)
+4. Getting error on trying to use docker_container plugin ansible-playbook -i hosts main.yml -k -b -vvvv : `fatal: [hello-world]: FAILED! => {"changed": false, "msg": "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"}` Full [log](./ansible_error.log) attached for reference
+5. Not able to figure out any other ways :( SOS
+
 Steps to start the exercise:
 
 1. In the project folder execute: `make up` 
 2. Apps: Sample python app (flask app), accessible on [localhost:5002](localhost:5002)
-3. Kibana, accessible on [localhost:5601](localhost:5002)
+3. Kibana, accessible on [localhost:5601](localhost:5601)
 4. To re-install/install index_patterns, search, dashboard execute: `make update`
-5. To destroy all. execute: `make down`
+5. Search [link](http://localhost:5601/app/discover#/view/hello-world-search?_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-7d%2Cto%3Anow)))
+6. Dashboard [link](http://localhost:5601/app/dashboards#/view/hello-world-dashboard?_g=(filters%3A!()%2Cquery%3A(language%3Akuery%2Cquery%3A'')%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-7d%2Cto%3Anow))) 
+7. To destroy all. execute: `make down`
 
 ---
 

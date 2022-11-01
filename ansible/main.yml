@@ -6,6 +6,8 @@
   - name: update docker container env var
     community.docker.docker_container:
       name: hello-world
+      recreate: yes
       state: started
+      restart: yes
       env:
           HW_ENV_VAR: fromAnsible
