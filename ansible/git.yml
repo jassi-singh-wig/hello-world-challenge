@@ -1,0 +1,13 @@
+- name: git module demo
+  hosts: localhost
+  connection: local
+  vars:
+    repo: "git@github.com:jassi-singh-wig/hello-world-challenge.git"
+    dest: "/tmp/github/hello-world-challenge.git"
+    sshkey: "~/.ssh/id_rsa"
+  tasks:
+    - name: checkout git repo
+      ansible.builtin.git:
+        repo: "{{ repo }}"
+        dest: "{{ dest }}"
+        key_file: "{{ sshkey }}"

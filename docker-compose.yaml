@@ -14,8 +14,39 @@ services:
   #   networks:
   #     - elastic
   #   environment:
-  #     - hw-var=Env_Var_Jassi
-      
+  #     - HW_ENV_VAR=Env_Var_Jassi
+
+  hw-ansible:
+    container_name: ansible
+    image: ansible
+    tty: true
+    stdin_open: true
+    build:
+      context: ./ansible
+    volumes:
+    - ./ansible/:/wip
+    working_dir: /wip
+    expose:
+      - "22"
+    networks:
+      - elastic
+    
+
+  hw-kibana-update: 
+    container_name: kibana-update
+    image: python:3.10.8-alpine3.15
+    volumes:
+    - ./kibana:/wip
+    working_dir: /wip
+    command: >
+      sh -c
+        "pip install requests &&
+        python ./init.py"
+    networks:
+      - elastic
+    depends_on:
+      - hw-kibana
+
   hw-filebeat: 
     container_name: filebeat
     user: root

@@ -1,3 +1,3 @@
 variable "env-var" {
-    default = (["hw-var=testingOfENVariable"])
+    default = (["HW_ENV_VAR=testingOfENVariable"])
 }

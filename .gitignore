@@ -1,7 +1,9 @@
 /hello-world/src/logs/*
 /hello-world/src/__pycache__/**
+/hello-world/src/supervisord.*
 /terraform/.terraform/**
 /terraform/.terraform.lock.hcl
 /terraform/terraform.tfstate
 /terraform/terraform.tfstate.backup
 *.DS_Store
+/kibana/output.txt

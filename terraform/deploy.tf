@@ -14,8 +14,11 @@ resource "docker_container" "hello_world_app" {
     internal = 5000
     external = 5002
   }
-
+  ports {
+    internal = 22
+  }
   networks_advanced {
     name = docker_network.private_network.name
   }
 }
+
