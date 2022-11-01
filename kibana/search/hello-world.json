@@ -1,0 +1,34 @@
+{
+    "id": "hello-world-search",
+    "type": "search",
+    "attributes": {
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "Hello-World-Jassi",
+        "sort": [
+            [
+                "@timestamp",
+                "desc"
+            ]
+        ],
+        "columns": [
+            "status_code",
+            "message",
+            "client_ip",
+            "date_time",
+            "query_string",
+            "type"
+        ],
+        "description": "",
+        "grid": {},
+        "hideChart": false
+    },
+    "references": [
+        {
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+            "type": "index-pattern",
+            "id": "hello-world-index-pattern"
+        }
+    ]
+}
