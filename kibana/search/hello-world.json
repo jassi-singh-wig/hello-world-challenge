@@ -19,15 +19,15 @@
       ],
       "title": "Hello-World-Jassi"
     },
-    "id": "25851cf0-5c16-11ed-888b-230e63a2a813",
+    "id": "hello-world-search",
     "references": [
       {
-        "id": "b142b140-5c15-11ed-888b-230e63a2a813",
+        "id": "hello-world-index-pattern",
         "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
         "type": "index-pattern"
       },
       {
-        "id": "b142b140-5c15-11ed-888b-230e63a2a813",
+        "id": "hello-world-index-pattern",
         "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
         "type": "index-pattern"
       }
