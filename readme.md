@@ -3,7 +3,7 @@
 ## Pre-requisite:
 - Docker, docker-compose should be running on the host
 - Terraform should be installed on the host
-
+- Ansible should be installed on the host (to run it locally)
 
 
 ### All apps are running in docker

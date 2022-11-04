@@ -8,8 +8,9 @@ header = {"kbn-xsrf":"anything","Content-Type": "application/json"}
 index_pattern = {}
 search = {}
 dashboard = {}
+visualization = {}
 
-objects = ["index-pattern", "search", "dashboard"]
+objects = ["index-pattern", "search", "dashboard","visualization"]
 
 for object in objects:
     folder_path = "./" + object
@@ -29,6 +30,8 @@ for object in objects:
                         search[id["meta"]["title"]] = id["id"]
                     elif object == "dashboard":
                         dashboard[id["meta"]["title"]] = id["id"]
+                    elif object == "visualization":
+                        visualization[id["meta"]["title"]] = id["id"]
         else:
             print("Fetch for existing %s failed, check logs: %s" % (object, response.text))
 
@@ -45,6 +48,8 @@ for object in objects:
             dict_object = dict(search)
         elif object == "dashboard":
             dict_object = dict(dashboard)
+        elif object == "visualization":
+            dict_object = dict(visualization)
 
         if len(dict_object) > 0:
             for title in dict_object.keys():

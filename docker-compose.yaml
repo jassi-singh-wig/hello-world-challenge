@@ -91,7 +91,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data01:/usr/share/elasticsearch/data
+      - data03:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -112,7 +112,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data02:/usr/share/elasticsearch/data
+      - data04:/usr/share/elasticsearch/data
     networks:
       - elastic
 
@@ -129,9 +129,9 @@ services:
     depends_on:
       - hw-es01
 volumes:
-  data01:
+  data03:
     driver: local
-  data02:
+  data04:
     driver: local
 networks:
   elastic:

@@ -1,34 +1,36 @@
 {
-    "id": "hello-world-search",
-    "type": "search",
     "attributes": {
-        "kibanaSavedObjectMeta": {
-            "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
-        },
-        "title": "Hello-World-Jassi",
-        "sort": [
-            [
-                "@timestamp",
-                "desc"
-            ]
-        ],
-        "columns": [
-            "status_code",
-            "message",
-            "client_ip",
-            "date_time",
-            "query_string",
-            "type"
-        ],
-        "description": "",
-        "grid": {},
-        "hideChart": false
+      "columns": [
+        "http.status_code",
+        "http.url",
+        "message"
+      ],
+      "description": "",
+      "grid": {},
+      "hideChart": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"type\",\"params\":{\"query\":\"applog\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match_phrase\":{\"type\":\"applog\"}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      },
+      "sort": [
+        [
+          "@timestamp",
+          "desc"
+        ]
+      ],
+      "title": "Hello-World-Jassi"
     },
+    "id": "25851cf0-5c16-11ed-888b-230e63a2a813",
     "references": [
-        {
-            "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
-            "type": "index-pattern",
-            "id": "hello-world-index-pattern"
-        }
-    ]
-}
+      {
+        "id": "b142b140-5c15-11ed-888b-230e63a2a813",
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern"
+      },
+      {
+        "id": "b142b140-5c15-11ed-888b-230e63a2a813",
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+        "type": "index-pattern"
+      }
+    ],
+    "type": "search"
+  }

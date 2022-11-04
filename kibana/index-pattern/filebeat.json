@@ -1,8 +1,8 @@
 {
-    "attributes": {
-      "timeFieldName": "@timestamp",
-      "title": "filebeat*"
-    },
-    "id": "hello-world-index-pattern",
-    "type": "index-pattern"
-  }
+  "attributes": {
+    "timeFieldName": "@timestamp",
+    "title": "filebeat*"
+  },
+  "id": "b142b140-5c15-11ed-888b-230e63a2a813",
+  "type": "index-pattern"
+}

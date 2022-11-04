@@ -5,8 +5,15 @@ filebeat.inputs:
     - /var/hw-app.log
 
 processors:
-  - add_docker_metadata:
-      host: "unix:///host_docker/docker.sock"
+- if:
+    regexp:
+      message: ^(172|192)
+  then:
+    - dissect:
+        tokenizer: '%{client_ip} - - [%{datetime}] "%{http.verb} %{http.url} %{http.version}" %{http.status_code|integer} -'
+        field: "message"
+        target_prefix: ""
+
 
 output.logstash:
   hosts: ["logstash:5044"]
